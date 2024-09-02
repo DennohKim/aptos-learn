@@ -4,6 +4,7 @@ const Badges = () => {
   return (
     <div>
       New Badges
+      {/* TODO: Page for minting NFT */}
     </div>
   )
 }
