@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { SearchInput } from './search-input'
 import { isTeacher } from '@/lib/teacher'
+import { WalletSelector } from './wallet-selector'
 
 export const NavbarRoutes = () => {
   const { userId } = useAuth()
@@ -21,11 +22,14 @@ export const NavbarRoutes = () => {
   return (
     <>
       {isSearchPage && (
-        <div className="hidden md:block">
+        <div className="hidden md:block ">
           <SearchInput />
         </div>
       )}
+
       <div className="ml-auto flex gap-x-2">
+      <div><WalletSelector/></div>
+
         {isTeacherPage || isCoursePage ? (
           <Link href="/">
             <Button size="sm" variant="ghost">
