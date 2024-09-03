@@ -1,4 +1,4 @@
-import { auth } from '@clerk/nextjs'
+import { auth, currentUser } from '@clerk/nextjs'
 import { redirect } from 'next/navigation'
 import { Banner } from '@/components/banner'
 import { Preview } from '@/components/preview'
@@ -14,6 +14,9 @@ export default async function ChapterDetails({ params }: { params: { courseId: s
   if (!userId) {
     return redirect('/')
   }
+
+  const user = await currentUser()
+  const userEmail = user?.emailAddresses[0].emailAddress
 
   const { chapter, course, muxData, attachments, nextChapter, userProgress, enrollment } = await getChapter({
     userId,
@@ -67,6 +70,7 @@ export default async function ChapterDetails({ params }: { params: { courseId: s
                 <MintNftButton
                   courseId={params.courseId}
                   courseName={course.title}
+                  userEmail={userEmail ?? ''}
                 />
               )}
             </div>
