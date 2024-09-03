@@ -60,7 +60,7 @@ public entry fun create_collection(admin: &signer) acquires ModuleData {
     
     let collection_name = string::utf8(b"Course Completion Certificates");
     let description = string::utf8(b"NFTs for completed courses");
-    let uri = string::utf8(b"https://example.com/course-certificates/");
+    let uri = string::utf8(b"https://brown-normal-butterfly-673.mypinata.cloud/ipfs/QmTUHjFvDDFX7VhD93b11Uc8zPVgV52vN8rNKTZw354zgS");
 
     let collection_constructor_ref = collection::create_unlimited_collection(
         admin,
@@ -117,7 +117,7 @@ public entry fun create_collection(admin: &signer) acquires ModuleData {
     string::append(&mut description, string::utf8(b")"));
 
     // Use a consistent URI for all tokens
-    let token_uri = string::utf8(b"https://example.com/course-certificates/metadata.json");
+    let token_uri = string::utf8(b"https://brown-normal-butterfly-673.mypinata.cloud/ipfs/QmTBTtStuLgZTxbVre78JrcBEuQqqEERLqPaXTy5ndDYVr");
 
     // Create the token
     let constructor_ref = token::create_from_account(
