@@ -7,6 +7,7 @@ import { getChapter } from '@/actions/get-chapter'
 import CourseEnrollButton from './_components/course-enroll-button'
 import { Separator } from '@/components/ui/separator'
 import { CourseProgressButton } from './_components/course-progress-button'
+import MintNftButton from '@/components/mint-nft-button'
 
 export default async function ChapterDetails({ params }: { params: { courseId: string; chapterId: string } }) {
   const { userId } = auth()
@@ -51,16 +52,24 @@ export default async function ChapterDetails({ params }: { params: { courseId: s
         <div>
           <div className="flex flex-col items-center justify-between p-4 md:flex-row">
             <h2 className="mb-2 text-2xl font-semibold">{chapter.title}</h2>
-            {enrollment ? (
-              <CourseProgressButton
-                chapterId={params.chapterId}
-                courseId={params.courseId}
-                nextChapterId={nextChapter?.id}
-                isCompleted={!!userProgress?.isCompleted}
-              />
-            ) : (
-              <CourseEnrollButton courseId={params.courseId} />
-            )}
+            <div className="flex items-center gap-2">
+              {enrollment ? (
+                <CourseProgressButton
+                  chapterId={params.chapterId}
+                  courseId={params.courseId}
+                  nextChapterId={nextChapter?.id}
+                  isCompleted={!!userProgress?.isCompleted}
+                />
+              ) : (
+                <CourseEnrollButton courseId={params.courseId} />
+              )}
+              {userProgress?.isCompleted && (
+                <MintNftButton
+                  courseId={params.courseId}
+                  courseName={course.title}
+                />
+              )}
+            </div>
           </div>
 
           <Separator />
