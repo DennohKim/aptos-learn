@@ -26,8 +26,6 @@ export const CourseProgressButton = ({
   const confetti = useConfettiStore()
   const [isLoading, setIsLoading] = useState(false)
 
-  console.log(isCompleted)
-
   const onClick = async () => {
     try {
       setIsLoading(true)

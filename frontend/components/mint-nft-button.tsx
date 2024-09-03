@@ -28,8 +28,7 @@ const MintNftButton = ({ courseId, courseName, userEmail }: MintNFTProps) => {
           courseName,
           userEmail
         })
-        const result = await signAndSubmitTransaction(transaction)
-        console.log('Transaction successful', result)
+        await signAndSubmitTransaction(transaction)
         toast.success('NFT minted successfully!')
         setIsMinted(true)
       } catch (error) {

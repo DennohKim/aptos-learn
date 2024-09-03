@@ -1,2 +1,2 @@
 export const NETWORK = process.env.NEXT_PUBLIC_APP_NETWORK ?? 'testnet'
-export const MODULE_ADDRESS = '0x669e35b44c5ec6ea9943c88addc4d22884f585bbb00cbbc9afae62f4117585f6'
+export const MODULE_ADDRESS = '0x5f5c9f65b39b0d441639ddf5435930e0ae7d0254f4b5388cb8b9b4a579895436'
