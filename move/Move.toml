@@ -1,0 +1,14 @@
+[package]
+name = "course_completion_nft"
+version = "1.0.0"
+authors = []
+
+[addresses]
+course_platform = "0x7f3258bc9c0198c5e7d555c8c4d991097cc2aa73ec913bc0930be3cf722c6a15"
+
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "mainnet", subdir = "aptos-move/framework/aptos-framework" }
+AptosTokenObjects = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "mainnet", subdir = "aptos-move/framework/aptos-token-objects" }
+
+[dev-dependencies]
