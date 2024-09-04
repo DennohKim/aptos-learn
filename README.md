@@ -25,7 +25,7 @@ This project is an online learning platform that allows users to enroll in cours
 
 ## Tech Stack
 - Frontend: Next.js, React
-- Backend: Node.js, Express
+- Backend:  API Routes
 - Database: PostgreSQL with Prisma ORM
 - Authentication: Clerk
 - Blockchain: Aptos
@@ -88,7 +88,6 @@ Upon course completion, users can mint an NFT on the Aptos blockchain. The proce
 - `GET /api/courses/:courseId`: Get course details
 - `POST /api/courses/:courseId/progress`: Update course progress
 - `POST /api/courses/:courseId/complete`: Mark a course as complete
-- `POST /api/courses/:courseId/mint-nft`: Mint NFT for completed course
 
 ## Database Schema
 ```prisma
@@ -96,7 +95,6 @@ model User {
   id            String   @id @default(cuid())
   name          String?
   email         String   @unique
-  aptosAddress  String?
   enrollments   Enrollment[]
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
