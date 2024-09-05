@@ -64,7 +64,7 @@ module course_platform::course_completion_nft {
         
         let collection_name = string::utf8(b"Course Completion Certificates");
         let description = string::utf8(b"NFTs for completed courses");
-        let uri = string::utf8(b"https://brown-normal-butterfly-673.mypinata.cloud/ipfs/QmTUHjFvDDFX7VhD93b11Uc8zPVgV52vN8rNKTZw354zgS");
+        let uri = string::utf8(b"https://gateway.irys.xyz/_1oij3cacOrOWPScC9wzzfV1RjZ9CuOU-rnP3FdnTbA");
 
         let collection_constructor_ref = collection::create_unlimited_collection(
             admin,
@@ -139,7 +139,7 @@ module course_platform::course_completion_nft {
         string::append(&mut description, course_id);
         string::append(&mut description, string::utf8(b")"));
 
-        let token_uri = string::utf8(b"https://brown-normal-butterfly-673.mypinata.cloud/ipfs/QmTBTtStuLgZTxbVre78JrcBEuQqqEERLqPaXTy5ndDYVr");
+        let token_uri = string::utf8(b"https://gateway.irys.xyz/SNORaCBqYXwMr7TUDevPkg-F009o0xNO2BE-UJojYgg");
 
         // Create the token
         let constructor_ref = token::create_from_account(
